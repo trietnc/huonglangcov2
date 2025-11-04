@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huong Lang Co - Flavor, Aged to Perfection</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Simple text-shadow for hero text */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Scroll Animation Classes --- */
+        
+        /* Base state: hidden */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                        transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: opacity, transform;
+        }
+
+        /* Split reveal (left) */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                        transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: opacity, transform;
+        }
+
+        /* Split reveal (right) */
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                        transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: opacity, transform;
+        }
+
+        /* Visible state: revealed */
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-left.is-visible,
+        .reveal-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-gray-900">Huong Lang Co</a>
+                </div>
+                
+                <!-- Primary CTA -->
+                <div class="flex items-center">
+                    <a href="#collection" class="inline-block bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-700 transition-colors duration-300">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Section 1: Hero -->
+        <section id="hero" class="h-screen min-h-[600px] flex items-center justify-center bg-cover bg-center" style="background-image: url('image v2/banner chính.png');">
+            <div class="text-center text-white p-4 max-w-2xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-shadow mb-4 reveal-on-scroll">Flavor, Aged to Perfection.</h1>
+                <h2 class="text-xl md:text-2xl font-light text-shadow mb-8 reveal-on-scroll" style="transition-delay: 150ms;">Discover Huong Lang Co. Premium, 100% natural fish sauce, slow-brewed for the modern palate.</h2>
+                <a href="#collection" class="inline-block bg-white text-gray-900 px-10 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors duration-300 reveal-on-scroll" style="transition-delay: 300ms;">
+                    Shop The Collection
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 2: The Difference is Time -->
+        <section id="difference" class="py-20 md:py-32 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <!-- Image -->
+                <div class="reveal-left">
+                    <img src="image v2/Nước mắm tép biển.png" alt="Minimalist barrel aging fish sauce" class="rounded-lg shadow-xl w-full">
+                </div>
+                <!-- Text Content -->
+                <div class="reveal-right">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">The Difference is Time.</h2>
+                    <h3 class="text-xl text-gray-700 mb-6">Like fine wine, true depth of flavor cannot be rushed.</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Our fish sauce is meticulously aged in traditional barrels for one to two years. This slow brewing process unlocks a complex, umami-rich flavor that is smoother, deeper, and unmistakably premium.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Collection -->
+        <section id="collection" class="py-20 md:py-32 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-12 reveal-on-scroll">The Collection</h2>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    
+                    <!-- Product 1 -->
+                    <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.03] reveal-on-scroll" style="transition-delay: 100ms;">
+                        <img src="image v2/Nước mắm nhĩ ủ 1 năm - truyền thống.png" alt="1-Year Brew Fish Sauce" class="w-full h-auto max-w-xs mx-auto mb-6 rounded-md">
+                        <h3 class="text-2xl font-bold mb-2">The 1-Year Brew</h3>
+                        <p class="text-gray-600 mb-6">Our signature brew. Bright, balanced, and perfect for elevating your everyday culinary creations.</p>
+                        <a href="#" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full text-md font-medium hover:bg-gray-700 transition-colors duration-300">
+                            Buy Now
+                        </a>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.03] reveal-on-scroll" style="transition-delay: 200ms;">
+                        <img src="image v2/Nước mắm ủ loại đặc biệt 2 năm 2.png" alt="2-Year Reserve Fish Sauce" class="w-full h-auto max-w-xs mx-auto mb-6 rounded-md">
+                        <h3 class="text-2xl font-bold mb-2">The 2-Year Reserve</h3>
+                        <p class="text-gray-600 mb-6">A limited reserve. Exceptionally deep, rich, and complex. For the discerning chef and special occasions.</p>
+                        <a href="#" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full text-md font-medium hover:bg-gray-700 transition-colors duration-300">
+                            Buy Now
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Our Modern Craft -->
+        <section id="craft" class="py-20 md:py-32 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 reveal-on-scroll">Our Modern Craft</h2>
+                <p class="text-xl text-gray-700 mb-16 reveal-on-scroll" style="transition-delay: 100ms;">Purity at every step. From sea to bottle.</p>
+                
+                <div class="grid md:grid-cols-3 gap-12 md:gap-8">
+                    
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div class="flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mb-6">
+                            <!-- Simple Fish Icon -->
+                            <svg class="w-10 h-10 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-3.002a.563.563 0 00-.586 0l-4.725 3.002a.562.562 0 01-.84-.61l1.285-5.385a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" clip-rule="evenodd" path-fill-rule="evenodd" fill="currentColor"/>
+                                <!-- A placeholder fish-like shape -->
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.335-4.335a4.5 4.5 0 016.364 6.364L18 17.25l-5.625 5.625c-1.03-1.03.042-3.34 0-3.34z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 7.5c0-1.105-.672-2.06-1.5-2.5a3 3 0 00-3 0 3 3 0 00-1.5 2.5m4.5 0c0 .92-.501 1.76-1.232 2.247a3 3 0 01-3.036 0c-.73-.487-1.232-1.327-1.232-2.247m4.5 0c0-1.105-.672-2.06-1.5-2.5a3 3 0 00-3 0 3 3 0 00-1.5 2.5" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">The Source</h3>
+                        <p class="text-gray-600">Only the finest, sustainably-sourced wild-caught anchovies.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center reveal-on-scroll" style="transition-delay: 300ms;">
+                        <div class="flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mb-6">
+                            <!-- Simple Barrel/Time Icon -->
+                            <svg class="w-10 h-10 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">The Aging</h3>
+                        <p class="text-gray-600">Patiently brewed for 1-2 years in our climate-controlled facility.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center reveal-on-scroll" style="transition-delay: 400ms;">
+                        <div class="flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mb-6">
+                            <!-- Simple Bottle/Purity Icon -->
+                            <svg class="w-10 h-10 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m3.75 9v6.75A3.375 3.375 0 0110.5 21m-5.25-3.75V11.25a3.375 3.375 0 013.375-3.375h1.5A1.125 1.125 0 0011.25 9v1.5a3.375 3.375 0 01-3.375 3.375H5.25" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 11.25a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">The Bottle</h3>
+                        <p class="text-gray-600">Triple-filtered for purity and bottled with precision.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Trusted by Modern Kitchens -->
+        <section id="testimonials" class="py-20 md:py-32 bg-gray-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 text-center mb-4 reveal-on-scroll">Trusted by Modern Kitchens</h2>
+                <p class="text-xl text-gray-700 text-center mb-16 reveal-on-scroll" style="transition-delay: 100ms;">A modern staple for international chefs and home cooks.</p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 text-xl">★★★★★</span>
+                        </div>
+                        <p class="text-lg text-gray-700 italic mb-6">"This is not my grandmother's fish sauce. It's clean, smooth, and has a depth I've never tasted before. It's a game-changer."</p>
+                        <p class="font-semibold text-gray-900_">- Sarah K., Food Blogger</p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg reveal-on-scroll" style="transition-delay: 300ms;">
+                        <div class="flex items-center mb-3">
+                            <span class="text-yellow-500 text-xl">★★★★★</span>
+                        </div>
+                        <p class="text-lg text-gray-700 italic mb-6">"We use the 2-Year Reserve in our restaurant. The consistency and quality are unmatched. Our clients notice the difference."</p>
+                        <p class="font-semibold text-gray-900">- Chef D. Nguyen</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: For Professionals -->
+        <section id="b2b" class="py-24 bg-cover bg-center bg-fixed" style="background-image: url('image v2/banner chính.png');">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-black/50 p-12 rounded-lg backdrop-blur-sm">
+                <h2 class="text-4xl font-extrabold text-white mb-4 reveal-on-scroll">For Professionals & Partners</h2>
+                <p class="text-xl text-white/90 mb-8 reveal-on-scroll" style="transition-delay: 150ms;">Elevate your menu with our premium bulk and custom-label solutions.</p>
+                <a href="#" class="inline-block bg-white text-gray-900 px-10 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors duration-300 reveal-on-scroll" style="transition-delay: 300ms;">
+                    Partner With Us
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 7: Final Call to Action -->
+        <section id="final-cta" class="py-24 md:py-32 bg-white text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-8 reveal-on-scroll">Experience the New Standard of Flavor.</h2>
+                <a href="#collection" class="inline-block bg-gray-900 text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-gray-700 transition-colors duration-300 reveal-on-scroll" style="transition-delay: 150ms;">
+                    Buy Now
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 Huong Lang Co. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Options for the IntersectionObserver
+            const observerOptions = {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of the element is visible
+            };
+
+            // Callback function to execute when an element is observed
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            };
+
+            // Create the IntersectionObserver
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Select all elements to be animated
+            const elementsToReveal = document.querySelectorAll('.reveal-on-scroll, .reveal-left, .reveal-right');
+            
+            // Observe each element
+            elementsToReveal.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Adjust for fixed header height (64px)
+                        const headerOffset = 64; 
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
